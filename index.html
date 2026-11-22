@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MemeMore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <div class="logo">Meme<b>More</b></div>
+      <button class="btn" id="openUp">Upload a meme</button>
+    </div>
+    <div class="tabs" role="group" aria-label="Filter feed">
+      <button class="tab" data-f="all" aria-pressed="true">Everything</button>
+      <button class="tab" data-f="image" aria-pressed="false">Images</button>
+      <button class="tab" data-f="video" aria-pressed="false">Videos</button>
+      <span class="sortg" role="group" aria-label="Sort feed">
+        <button class="tab" data-s="new" aria-pressed="true">Newest</button>
+        <button class="tab" data-s="top" aria-pressed="false">Funniest</button>
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <div class="note" id="note" hidden></div>
+    <div id="feed"></div>
+    <div id="more"></div>
+  </main>
+
+  <dialog id="dlg">
+    <h2>Drop a meme</h2>
+    <div style="color:var(--muted);font-size:15px">No account, no name. Images or videos up to 20 MB.</div>
+    <label class="drop" id="drop" tabindex="0">
+      <input type="file" id="file" accept="image/png,image/jpeg,image/gif,image/webp,video/mp4,video/webm">
+      <span id="dropTxt">Drag a file here or tap to choose</span>
+      <div id="prevBox"></div>
+    </label>
+    <textarea id="cap" rows="2" maxlength="140" placeholder="Add a caption (optional)"></textarea>
+    <div class="err" id="err" role="alert"></div>
+    <div class="row">
+      <button class="tab" id="cancel" type="button">Cancel</button>
+      <button class="btn" id="post" type="button">Post meme</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
